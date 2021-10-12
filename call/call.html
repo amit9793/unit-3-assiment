@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+</body>
+</html>
+<script>
+//"
+
+
+//fetch("https://newsapi.org/v2/everything?q=tesla&from=2021-09-07&sortBy=publishedAt&apiKey=e0f50a912c704931a073a03da9d3fe0e")
+ 
+async function makereq(){
+
+    let res = await fetch("https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=e0f50a912c704931a073a03da9d3fe0e");
+    let data = await res.json();
+    console.log(data);
+
+    for( {title,url,urlToImage} of data.articles){
+        console.log(title,url,urlToImage);
+
+        var para = document.createElement('p');
+        para.textContent = title;
+        var bodyelem = document.querySelector("body");
+        bodyelem.appendChild(para);
+
+        var img1 = document.createElement(para);
+        img1.innerHTML = url;
+        var bodyelem = document.querySelector("body");
+        bodyelem.appendChild(img1);
+
+    }
+
+}
+makereq();
+
+
+</script>

@@ -1,0 +1,40 @@
+<script>
+
+    function firstarray(x){
+        this.length = arguments.length;
+       // console.log(arguments);
+    
+        for(let i=0; i<this.length; i++){
+           this[i] = arguments[i];
+           // console.log(i)
+        }
+    
+    }
+    
+    var arr = new firstarray("ram","shyam","geet","mohan");
+    
+    firstarray.prototype.push = function(element){
+        let index = this.length;
+        this.length++;
+        this[index]= element;
+
+    };
+
+    arr.push("amit");
+    //console.log(arr);
+
+    var newarr = [];
+
+    for(key in arr){
+        newarr.push((arr[key]));
+    }
+    console.log(newarr);
+
+    console.log(newarr[0]);
+
+    
+    
+    
+    
+    
+    </script>

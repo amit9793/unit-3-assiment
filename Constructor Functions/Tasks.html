@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text"id="userinput">
+    <button onclick="press()">click</button>
+</body>
+</html>
+<script>
+
+
+    
+        function task(t,d,s){
+            
+            this.name_of_task = t;
+            this.creation_date = d;
+            this.status = s;
+
+        }      
+        function press(){
+            var a = document.getElementById("userinput").value;
+
+            var t1 = new task('a',23,false);
+
+            console.log(t1);
+
+            var para = document.createElement('p');
+            para.textContent = a;
+
+            var btn = document.createElement('button');
+
+            var body1 = document.querySelector("body");
+            
+
+            body1.appendChild(btn);
+            body1.appendChild(para);
+        }
+
+</script>
